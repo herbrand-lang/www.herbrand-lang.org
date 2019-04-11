@@ -1,3 +1,25 @@
+<?php
+
+// Requires
+require("php/mysql.php");
+require("php/functions.php");
+
+// Current page
+$_view = isset( $_GET["view"]) ? $_GET["view"] : "home";
+if(!file_exists("pages/$_view.php")) {
+	$_view = "404";
+	header("HTTP/1.0 404 Not Found");
+}
+if($_link->connect_errno){
+	$_view = "mysql";
+}
+if(isset($_GET['module']))
+	$_GET['module'] = $_link->escape_string($_GET['module']);
+if(isset($_GET['predicate']))
+	$_GET['predicate'] = str_replace(' ', '+', $_link->escape_string( $_GET['predicate']));
+	
+
+?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -28,7 +50,7 @@
 				</ul>
 			</div>
 		</div>
-		<div id="body"> <?php include("pages/home.php"); ?> </div>
+		<div id="body"> <?php include("pages/$_view.php"); ?> </div>
 		<div id="footer">
 			<div id="footer-container" class="container py-3 text-center">
 				<p>Maintained by the <a href="https://github.com/herbrand-lang" target="_blank">Herbrand Team</a>. See a typo? <a href="https://github.com/herbrand-lang/www.herbrand-lang.org" title="The home of the Herbrand website" target="_blank">Send a fix here!</a></p>
