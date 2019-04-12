@@ -7,7 +7,7 @@ ErrorDocument 404 /404
 	
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^documentation/herbrand/([^\/]+)/([^\/]+)/([0-9]+)/?$ index.php?view=predicate&module=$1&predicate=$2&arity=$3 [L,NC,QSA]
+	RewriteRule ^documentation/reference/([^\/]+)/?$ index.php?view=module&module=$1 [L,NC,QSA]
 
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d

@@ -37,13 +37,14 @@ if(isset($_GET['predicate']))
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<!-- Herbrand -->
-		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="/styles/main.css">
+		<script type="text/javascript" src="/javascript/main.js"></script>
 		<title>The Herbrand Programming Language</title>
 	</head>
 	<body>
 		<div id="header">
 			<div id="header-container" class="container py-3">
-				<a href="http://herbrand-lang.org"><img src="images/herbrand-header.png" id="header-logo" alt="herbrand logo" /></a>
+				<a href="http://herbrand-lang.org"><img src="/images/herbrand-header.png" id="header-logo" alt="herbrand logo" /></a>
 				<ul id="header-menu">
 					<li><a href="/downloads">Downloads</a></li>
 					<li><a href="/documentation">Documentation</a></li>

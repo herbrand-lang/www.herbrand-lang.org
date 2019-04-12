@@ -8,20 +8,26 @@ a:hover {
 	text-decoration: none;
 }
 
+code {
+	background-color: #e6cbde;
+	border: 2px solid #ffffff;
+	outline: 1px solid #efefef;
+	color: #6b345a;
+	padding: 0px 3px;
+}
+
 #header, #header-container {
 	overflow: hidden;
 }
 
 #header-logo {
 	float: left;
-}
-
-#header-menu {
-	float: right;
+	height: 64px;
 }
 
 #header-menu {
 	list-style-type: none;
+	float: right;
 	padding: 0px;
 	margin: 0px;
 	margin-top: 18px;
@@ -53,17 +59,58 @@ a:hover {
 	top: -3px;
 }
 
-.header1 > a {
+@media (max-width: 500px) {
+
+	
+	#header-logo {
+		display: block;
+		float: none;
+		margin: auto;
+		margin-bottom: 10px;
+	}
+
+	#header-menu {
+		float: none;
+		margin-top: 0px;
+	}
+
+	#header-menu > li {
+		display: block;
+		padding: 0px;
+		margin: 0px;
+		margin-left: 0px;
+		width: auto;
+	}
+	
+	#header-menu > li > a {
+		display: block;
+	}
+	
+}
+
+h1 > a {
 	border-bottom: 8px solid #b46d9c;
 	color: #395c8c;
 	display: block;
 	padding-bottom: 5px;
 }
 
-.header1 > a:hover {
+h1 > a:hover {
 	border-bottom: 8px solid #7fa3d5;
 	color: #6b345a;
 	display: block;
+}
+
+h2 > a {
+	background-color: #7fa3d5;
+	color: #395c8c;
+	display: block;
+	padding: 5px 10px;
+}
+
+h2 > a:hover {
+	background-color: #b46d9c;
+	color: #6b345a;
 }
 
 #header {
@@ -73,4 +120,62 @@ a:hover {
 
 #header-container {
 	background-color: #6b345a;
+}
+
+.predicate > * {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.predicate pre {
+	background-color: #d4e1f1;
+	border-top: 1px solid #7fa3d5;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	padding: 5px 10px;
+}
+
+.predicate pre > code {
+	background-color: #d4e1f1;
+	margin: 0px;
+	padding: 0px;
+}
+
+.predicate pre > code {
+	border: none;
+	outline: none;
+}
+
+.predicate blockquote {
+	color: #395c8c;
+	font-weight: bold;
+}
+
+.predicate .template-name {
+	font-weight: bold;
+}
+
+.predicate .template-parenthesis {
+	color: #395c8c;
+	font-weight: bold;
+}
+
+.predicate .template-add {
+	color: #7b0a0a;
+}
+
+.predicate .template-minus {
+	color: #085f06;
+}
+
+.predicate .template-dpoint {
+	color: #3e7770;
+}
+
+.predicate .template-arroba {
+	color: #5a005d;
+}
+
+.predicate .template-interrogation {
+	color: #e06f00;
 }
