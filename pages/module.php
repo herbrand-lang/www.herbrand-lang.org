@@ -7,11 +7,19 @@
 	$name = $module == "builtin" ? "(builtin predicates)" : "(module $module)";
 	
 	echo "<h1 class=\"header1 mb-3\"><a href=\"\">$name</a></h1>";
+	echo "<ul>";
+	foreach(scandir("doc/reference/$module") as $category) {
+		if($category != "." && $category != "..") {
+			$name = ucfirst(implode(" ", explode("_", $category)));
+			echo "<li><a href=\"#$category\">$name</a></li>";
+		}
+	}
+	echo "</ul>";
 	
 	foreach(scandir("doc/reference/$module") as $category) {
 		if($category != "." && $category != "..") {
-			$name = implode(" ", explode("_", $category));
-			echo "<h2 id=\"$category\" class=\"mt-4 text-capitalize\"><a href=\"#$category\">$name</a></h2>";
+			$name = ucfirst(implode(" ", explode("_", $category)));
+			echo "<h2 id=\"$category\" class=\"mt-4\"><a href=\"#$category\">$name</a></h2>";
 			foreach(scandir("doc/reference/$module/$category") as $predicate) {
 				if($predicate != "." && $predicate != "..") {
 					$name = str_replace(".md", "", $predicate);
