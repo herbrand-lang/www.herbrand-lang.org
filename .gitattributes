@@ -1,0 +1,3 @@
+*.h linguist-language=C
+*.hb linguist-language=Herbrand
+*.php linguist-language=PHP
