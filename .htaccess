@@ -8,6 +8,11 @@ ErrorDocument 404 /404
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^documentation/reference/([^\/]+)/?$ index.php?view=module&module=$1 [L,NC,QSA]
+	
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^documentation/src/([^\/]+)/?$ source.php?module=$1 [L,NC,QSA]
 
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d

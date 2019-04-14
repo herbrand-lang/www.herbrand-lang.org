@@ -23,7 +23,7 @@
 			foreach(scandir("doc/reference/$module/$category") as $predicate) {
 				if($predicate != "." && $predicate != "..") {
 					$name = str_replace(".md", "", $predicate);
-					echo "<div id=\"$name\" class=\"predicate my-4\">";
+					echo "<div id=\"predicate-$name\" class=\"predicate my-4\">";
 					echo $Parsedown->text(file_get_contents("doc/reference/$module/$category/$predicate"));
 					echo "</div>";
 				}
@@ -31,5 +31,5 @@
 		}
 	}
 ?>
-<script>templates();</script>
+<script>templates("<?php echo $module; ?>");</script>
 </div>

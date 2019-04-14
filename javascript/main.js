@@ -1,4 +1,4 @@
-function templates() {
+function templates(module) {
 	var elems = document.getElementsByClassName("predicate");
 	for(var i = 0; i < elems.length; i++) {
 		if(elems[i].childNodes.length > 0) {
@@ -28,6 +28,10 @@ function templates() {
 				if(k != 0)
 					html += "\n";
 				html += t.join(" ");
+			}
+			if(module != "builtin") {
+				var name = elems[i].getAttribute("id");
+				html += "<a class=\"float-right\" target=\"_blank\" href=\"/documentation/src/" + module + "#" + name + "\">#source</a>";
 			}
 			code.innerHTML = html;
 		}
